@@ -40,11 +40,13 @@ def main(thebored):
              thebored[temp] ="x"
              count+=1
      elif trun == "o" and count <9:
-          
+         compSet(theBored)
 
-     if trun == "x":
+     elif winOrNot(trun,theBored) == trun:
+         break
+     elif trun == "x":
          trun = "o"
-     if trun =="o":
+     elif trun =="o":
          trun ="x"
 
      print(trun)
