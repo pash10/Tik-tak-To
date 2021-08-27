@@ -20,10 +20,9 @@ def main(thebored):
  count = 0
  print(trun)
  printBord()
- printBord()
+ print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
  while count < 9:
      coninte = True
-     print(count)
      if trun == "x":
          temp = input("Choose number betten 1-9=> ")
          if thebored[temp] != "":
@@ -62,6 +61,7 @@ def main(thebored):
 
      print(trun)
      printBord()
+     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
 def winOrNot(trun,thebored):
     if thebored["7"] ==trun and thebored["5"] == trun and thebored["3"] == trun:
@@ -95,7 +95,7 @@ def compSet(thebored):
     cont = True
     if thebored["5"] == "":
         thebored["5"] = "o"
-    else:
+    elif thebored["5"] !="":
         while cont == True:
             temp = random.randrange(1,9)
             if thebored[temp] == "":
@@ -157,13 +157,10 @@ def compStop(thebored):
 
  
 def compWin(thebored):
- print("A")
  if thebored["7"] == "o" and thebored["4"] == "o" and thebored["1"] =="":
      thebored["1"] = "o"
- print("b")
  if thebored["7"] == "o" and thebored["4"] == "" and thebored["1"] =="o":
      thebored["4"] ="o"
- print("c")
  if thebored["7"] == "" and thebored["4"] =="o" and thebored["1"] =="o":
      thebored["7"] ="o"
  if thebored["8"] == "o" and thebored["5"] =="o" and thebored["2"] =="":
@@ -209,7 +206,6 @@ def compWin(thebored):
  if thebored["9"] == "" and thebored["5"] =="o" and thebored["1"] =="o":
      thebored["9"] ="o"
  else:
-     print("d")
      return False
      
 main(theBored)
