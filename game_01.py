@@ -48,14 +48,14 @@ def main(thebored):
      
       
 
-     elif trun == "o" and count <9:
+     if trun == "o" and count <9:
          if compWin(theBored) == False:
              if compStop(theBored) == False:
                  compSet(theBored)
          count+=1
          
 
-     elif winOrNot(trun,theBored) == trun:
+     if winOrNot(trun,theBored) == trun:
          break
     
 
@@ -95,12 +95,16 @@ def compSet(thebored):
     cont = True
     if thebored["5"] == "":
         thebored["5"] = "o"
+    
     elif thebored["5"] !="":
         while cont == True:
             temp = random.randrange(1,9)
             if thebored[temp] == "":
                 thebored[temp] = "o"
                 cont = False
+            
+            
+    
                
 
 def compStop(thebored):
