@@ -33,21 +33,32 @@ def main(thebored):
                  if thebored[temp] =="":
                      thebored[temp] = "x"
                      count+=1
+                     if winOrNot(trun,theBored) == True:
+                         break
+                     trun ="o"
+                    
                      
 
 
          elif thebored[temp] =="":
              thebored[temp] ="x"
+             if winOrNot(trun,theBored) == True:
+                 break
+             trun ="o"
              count+=1
+     
+      
+
      elif trun == "o" and count <9:
-         compSet(theBored)
+         if compWin(theBored) == False:
+             if compStop(theBored) == False:
+                 compSet(theBored)
+         count+=1
+         
 
      elif winOrNot(trun,theBored) == trun:
          break
-     elif trun == "x":
-         trun = "o"
-     elif trun =="o":
-         trun ="x"
+    
 
      print(trun)
      printBord()
@@ -90,6 +101,7 @@ def compSet(thebored):
             if thebored[temp] == "":
                 thebored[temp] = "o"
                 cont = False
+               
 
 def compStop(thebored):
  if thebored["7"] == "x" and thebored["4"] == "x" and thebored["1"] =="":
@@ -141,59 +153,63 @@ def compStop(thebored):
  if thebored["9"] == "" and thebored["5"] =="x" and thebored["1"] =="x":
      theBored["9"] ="o"
  else:
-     compSet(theBored)
+    return False
 
  
 def compWin(thebored):
+ print("A")
  if thebored["7"] == "o" and thebored["4"] == "o" and thebored["1"] =="":
-     theBored["1"] = "o"
+     thebored["1"] = "o"
+ print("b")
  if thebored["7"] == "o" and thebored["4"] == "" and thebored["1"] =="o":
-     theBored["4"] ="o"
+     thebored["4"] ="o"
+ print("c")
  if thebored["7"] == "" and thebored["4"] =="o" and thebored["1"] =="o":
-     theBored["7"] ="o"
+     thebored["7"] ="o"
  if thebored["8"] == "o" and thebored["5"] =="o" and thebored["2"] =="":
-     theBored["2"] ="o"
+     thebored["2"] ="o"
  if thebored["8"] == "" and thebored["5"] =="o" and thebored["2"] =="o":
-     theBored["8"] ="o"
+     thebored["8"] ="o"
  if thebored["8"] == "o" and thebored["5"] =="" and thebored["2"] =="o":
-     theBored["5"] ="o"
+     thebored["5"] ="o"
  if thebored["9"] == "o" and thebored["6"] =="o" and thebored["3"] =="":
-     theBored["3"] ="o"
+     thebored["3"] ="o"
  if thebored["9"] == "" and thebored["6"] =="o" and thebored["3"] =="o":
-     theBored["9"] ="o"
+     thebored["9"] ="o"
  if thebored["9"] == "o" and thebored["6"] =="" and thebored["3"] =="o":
-     theBored["6"] ="o"
+     thebored["6"] ="o"
  if thebored["7"] == "o" and thebored["8"] =="o" and thebored["9"] =="":
-     theBored["9"] ="o"
+     thebored["9"] ="o"
  if thebored["7"] == "" and thebored["8"] =="o" and thebored["9"] =="o":
-     theBored["7"] ="o"
+     thebored["7"] ="o"
  if thebored["7"] == "o" and thebored["8"] =="" and thebored["9"] =="o":
-     theBored["8"] ="o"
+     thebored["8"] ="o"
  if thebored["4"] == "o" and thebored["5"] =="o" and thebored["6"] =="":
-     theBored["6"] ="o"
+     thebored["6"] ="o"
  if thebored["4"] == "" and thebored["5"] =="o" and thebored["6"] =="o":
-     theBored["4"] ="o"
+     thebored["4"] ="o"
  if thebored["4"] == "o" and thebored["5"] =="" and thebored["6"] =="o":
-     theBored["5"] ="o"
+     thebored["5"] ="o"
  if thebored["1"] == "o" and thebored["2"] =="o" and thebored["3"] =="":
-     theBored["3"] ="o"
+     thebored["3"] ="o"
  if thebored["1"] == "o" and thebored["2"] =="" and thebored["3"] =="o":
-     theBored["2"] ="o"
+     thebored["2"] ="o"
  if thebored["1"] == "" and thebored["2"] =="o" and thebored["3"] =="o":
-     theBored["1"] ="o"
+     thebored["1"] ="o"
  if thebored["7"] == "o" and thebored["5"] =="o" and thebored["3"] =="":
-     theBored["3"] ="o"
+     thebored["3"] ="o"
  if thebored["7"] == "o" and thebored["5"] =="" and thebored["3"] =="o":
-     theBored["5"] ="o"
+     thebored["5"] ="o"
  if thebored["7"] == "" and thebored["5"] =="o" and thebored["3"] =="o":
-     theBored["7"] ="o"
+     thebored["7"] ="o"
  if thebored["9"] == "o" and thebored["5"] =="o" and thebored["1"] =="":
-     theBored["1"] ="o"
+     thebored["1"] ="o"
  if thebored["9"] == "o" and thebored["5"] =="" and thebored["1"] =="o":
-     theBored["5"] ="o"
+     thebored["5"] ="o"
  if thebored["9"] == "" and thebored["5"] =="o" and thebored["1"] =="o":
-     theBored["9"] ="o"
+     thebored["9"] ="o"
  else:
-     compStop(theBored)
-
+     print("d")
+     return False
+     
 main(theBored)
