@@ -38,10 +38,6 @@ def main(thebored):
                          printBord()
                          break
                      trun ="o"
-                    
-                     
-
-
          elif thebored[temp] =="":
              thebored[temp] ="x"
              if winOrNot(trun,theBored) == True:
@@ -50,9 +46,6 @@ def main(thebored):
                  break
              trun ="o"
              count+=1
-     
-      
-
      if trun == "o" and count <9:
          if compWin(theBored) == False:
              if compStop(theBored) == False:
@@ -63,11 +56,6 @@ def main(thebored):
                     break
          trun = "x"
          count+=1
-         
-
-     
-     
-
      print(trun)
      printBord()
      print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
@@ -115,10 +103,6 @@ def compSet(thebored):
                 cont = False
                 break
             
-            
-    
-               
-
 def compStop(thebored):
  if thebored["7"] == "x" and thebored["4"] == "x" and thebored["1"] =="":
      theBored["1"] = "o"
@@ -171,7 +155,6 @@ def compStop(thebored):
  else:
     return False
 
- 
 def compWin(thebored):
  if thebored["7"] == "o" and thebored["4"] == "o" and thebored["1"] =="":
      thebored["1"] = "o"
