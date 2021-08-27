@@ -20,7 +20,6 @@ def main(thebored):
  count = 0
  print(trun)
  printBord()
- compStop(theBored)
  printBord()
  while count < 9:
      coninte = True
@@ -41,7 +40,7 @@ def main(thebored):
              thebored[temp] ="x"
              count+=1
      elif trun == "o" and count <9:
-         pass
+          
 
      if trun == "x":
          trun = "o"
@@ -76,19 +75,19 @@ def winOrNot(trun,thebored):
     if thebored["1"] == trun and thebored["2"] == trun and thebored["3"] == trun:
         print(trun + " won")
         return True 
-
-
-
-
-          
+         
 def compSet(thebored):
     import random
+    temp =0
+    cont = True
     if thebored["5"] == "":
         thebored["5"] = "o"
     else:
-
-
-
+        while cont == True:
+            temp = random.randrange(1,9)
+            if thebored[temp] == "":
+                thebored[temp] = "o"
+                cont = False
 
 def compStop(thebored):
  if thebored["7"] == "x" and thebored["4"] == "x" and thebored["1"] =="":
@@ -139,6 +138,9 @@ def compStop(thebored):
      theBored["5"] ="o"
  if thebored["9"] == "" and thebored["5"] =="x" and thebored["1"] =="x":
      theBored["9"] ="o"
+ else:
+     compSet(theBored)
+
  
 def compWin(thebored):
  if thebored["7"] == "o" and thebored["4"] == "o" and thebored["1"] =="":
@@ -191,7 +193,5 @@ def compWin(thebored):
      theBored["9"] ="o"
  else:
      compStop(theBored)
-
-
 
 main(theBored)
