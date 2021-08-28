@@ -93,10 +93,9 @@ def compSet(thebored):
     
     elif thebored["5"] !="":
         while cont == True:
-            temp =random.randrange(1,9)
-            tempA = str(temp)
-            if thebored[tempA] == "":
-                thebored[tempA] = "o"
+            temp =str(random.randrange(1,9))
+            if thebored[temp] == "":
+                thebored[temp] = "o"
                 cont = False
                 break
             
