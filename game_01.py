@@ -30,14 +30,14 @@ def main(thebored):
                  if thebored[tempA] =="":
                      thebored[tempA] = "x"
                      count+=1
-                     if winOrNot("x",theBored) == True:
+                     if winOrNot(trun,theBored) == True:
                          stop = True
                          printBord()
                          break
                      trun ="o"
          elif thebored[temp] =="":
              thebored[temp] ="x"
-             if winOrNot("X",theBored) == True:
+             if winOrNot(trun,theBored) == True:
                  stop = True
                  printBord()
                  break
@@ -47,7 +47,7 @@ def main(thebored):
          if compWin(theBored) == False:
              if compStop(theBored) == False:
                  compSet(theBored)
-                 if winOrNot("x",theBored) == True:
+                 if winOrNot(trun,theBored) == True:
                     stop= True
                     printBord()
                     break
